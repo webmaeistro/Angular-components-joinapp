@@ -1,0 +1,69 @@
+.container {
+  position: relative;
+  margin-top: 12px;
+}
+
+.control {
+  width: 100%;
+  /* height: 96px; */
+  color: white;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom-color: hsla(185, 100%, 62%, 0.2);
+  overflow: auto;
+  resize: none;
+}
+
+.control:focus {
+  outline: none;
+}
+.control::placeholder {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.control:-webkit-autofill,
+.control:-webkit-autofill:hover,
+.control:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fc2f70;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.control_label {
+  font-weight: 400;
+  font-size: small;
+  text-transform: uppercase;
+}
+
+.container .control_label {
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.container .control + .control_label {
+  -webkit-transform: translateY(-18px);
+  transform: translateY(-18px);
+  opacity: 0.9;
+}
+
+.control_underline {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #3cefff;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.control:focus ~ .control_underline,
+.control:hover ~ .control_underline {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}

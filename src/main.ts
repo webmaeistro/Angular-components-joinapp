@@ -1,0 +1,13 @@
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+
+import { YeahRootModule } from "./app/pages/root/root.module";
+import { environment } from "./environments/environment";
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic()
+  .bootstrapModule(YeahRootModule)
+  .catch(err => console.log(err));

@@ -1,0 +1,15 @@
+<header class="header">
+  <a routerLink="{{ homeRoute }}" class="logo">
+    <span>Joinapp</span>
+  </a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" #menuBtn />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li *ngFor="let menuItem of menuItems" (click)="toggle(menuBtn)">
+      <a [routerLink]="menuItem.route">
+        <i class="material-icons">{{ menuItem.iconName }}</i>
+        <span>{{ menuItem.name }}</span>
+      </a>
+    </li>
+  </ul>
+</header>
